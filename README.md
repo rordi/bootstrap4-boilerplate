@@ -1,4 +1,4 @@
-Bootstrap 4 Biolerplate
+Bootstrap 4 Boilerplate
 =======================
 
 Boilerplate for Bootstrap 4, bootstrap.native (no jQuery), include-media, Font Awesome
