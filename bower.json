@@ -1,0 +1,22 @@
+{
+  "name": "yoga-app-ui",
+  "authors": [ "Dietrich Rordorf, Ediqo" ],
+  "description": "Boilerplate for Bootstrap 4, bootstrap.native (no jQuery), include-media, Font Awesome",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "^4.0.0",
+    "font-awesome": "^4.6.3",
+    "compass-sass-mixins": "*",
+    "bootstrap.native": "^2.0.3",
+    "include-media": "^1.4.9"
+  }
+}
