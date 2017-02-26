@@ -1,6 +1,11 @@
 Bootstrap 4 Biolerplate
 =======================
 
+Boilerplate for Bootstrap 4, bootstrap.native (no jQuery), include-media, Font Awesome
+
+0. Prerequisites
+----------------
+
 You need to have the Node packaged modules manager (npm) and the gem package
 manager installed.
 
