@@ -121,6 +121,22 @@ module.exports = function(grunt) {
         },
 
         // ----------------------------------------------------
+        // grunt-postcss auto vendor prefixing
+        // ----------------------------------------------------
+
+        postcss: {
+            options: {
+                map: false,
+                processors: [
+                    require('autoprefixer')
+                ]
+            },
+            dist: {
+                src: "dist/css/*.css"
+            }
+        },
+
+        // ----------------------------------------------------
         // grunt-uglify javascript minification configuration
         // ----------------------------------------------------
 
@@ -146,7 +162,7 @@ module.exports = function(grunt) {
         watch: {
             css: {
                 files: ["scss/*.scss", "scss/*/*.scss"],
-                tasks: ["sass", "cssmin"]
+                tasks: ["sass", "cssmin", "postcss"]
             },
             scripts: {
                 files: ["js/*.js", "js/*/*.js"],
@@ -169,6 +185,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-watch"); // default grunt watch task
     grunt.loadNpmTasks("grunt-contrib-copy"); // copy files and folders
     grunt.loadNpmTasks("grunt-sass"); // compile sass code to css code
+    grunt.loadNpmTasks("grunt-postcss"); // post-process css to auto add vendor prefixing
     grunt.loadNpmTasks("grunt-contrib-cssmin"); // concatenate and minify css code
     grunt.loadNpmTasks("grunt-contrib-uglify"); // concatenate and minify javascript
 
@@ -178,7 +195,7 @@ module.exports = function(grunt) {
     // ====================================================
     // define grunt task CLI command shortcuts
     grunt.registerTask("default", ["watch"]);
-    grunt.registerTask("css", ["copy","sass","cssmin"]);
+    grunt.registerTask("css", ["copy","sass","cssmin","postcss"]);
     grunt.registerTask("js", ["uglify"]);
     grunt.registerTask("all", ["js", "css"]);
 
